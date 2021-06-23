@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d0W-HB-bTT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="W5z-Jv-4eo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="d0W-HB-bTT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IaT-Yq-52g">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uev-8m-SEN" kind="relationship" relationship="viewControllers" id="WWp-bb-wAZ"/>
+                        <segue destination="2GM-HI-IQD" kind="relationship" relationship="viewControllers" id="1el-Ne-u9P"/>
+                        <segue destination="A6k-G2-Njp" kind="relationship" relationship="viewControllers" id="bTZ-I4-V7V"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRT-I9-Lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="111"/>
+        </scene>
+        <!--LibraryTab-->
+        <scene sceneID="LIF-C4-WPL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LibraryTab" id="2GM-HI-IQD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ieh-Fb-50v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hUH-nZ-yRY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="109.82142857142857"/>
+        </scene>
+        <!--DiscoverTab-->
+        <scene sceneID="EuD-aJ-qJo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DiscoverTab" id="Uev-8m-SEN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lqd-oQ-GfB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFe-rw-eL3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="-583.25892857142856"/>
+        </scene>
+        <!--FavoritesTab-->
+        <scene sceneID="OLA-BF-q8q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoritesTab" id="A6k-G2-Njp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="hSo-BZ-MeS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7p-XI-4Oh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="911.59420289855075" y="904.6875"/>
+        </scene>
+    </scenes>
+</document>
