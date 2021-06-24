@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1402AC26851DF9004037DB /* PlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1402AB26851DF9004037DB /* PlayingViewController.swift */; };
 		4E2624AF2683D11700C2CA7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2624AE2683D11700C2CA7F /* AppDelegate.swift */; };
 		4E2624B12683D11700C2CA7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2624B02683D11700C2CA7F /* SceneDelegate.swift */; };
 		4E2624BB2683D11700C2CA7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2624B92683D11700C2CA7F /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1402AB26851DF9004037DB /* PlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingViewController.swift; sourceTree = "<group>"; };
 		4E2624AB2683D11700C2CA7F /* NotSpotafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotSpotafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2624AE2683D11700C2CA7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E2624B02683D11700C2CA7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		4E2624E12683D1A800C2CA7F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4E1402AB26851DF9004037DB /* PlayingViewController.swift */,
 				4E2624E62683D2A800C2CA7F /* FavoriteViewController.swift */,
 				4E2624CF2683D19800C2CA7F /* AlbumDetailViewController.swift */,
 				4E2624D22683D19800C2CA7F /* LibViewController.swift */,
@@ -232,6 +235,7 @@
 				4E2624DC2683D19800C2CA7F /* AlbumDetailViewController.swift in Sources */,
 				4E2624D52683D19800C2CA7F /* AlbumViewCell.swift in Sources */,
 				4E2624B12683D11700C2CA7F /* SceneDelegate.swift in Sources */,
+				4E1402AC26851DF9004037DB /* PlayingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

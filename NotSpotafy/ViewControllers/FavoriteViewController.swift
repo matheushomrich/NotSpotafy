@@ -12,20 +12,18 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var favorite: UITableView!
     private var musicService: MusicService?
-    
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            self.musicService = try MusicService()
-        } catch {
-            print(error)
-        }
-        
+        musicService = appDelegate.musicService
         favorite.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        favorite.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (musicService?.favoriteMusics.count)!
@@ -38,6 +36,10 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.favoriteImage.image = UIImage(named: favoriteItem!.id)
         cell.favoriteLabel.text = favoriteItem?.title
         cell.favoriteSubtitleLabel.text = favoriteItem?.artist
+        cell.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        cell.heartButton.tintColor = .red
+        cell.music = favoriteItem
+        cell.musicService = musicService
         
         return cell
     }

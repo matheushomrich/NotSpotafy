@@ -11,19 +11,16 @@ class LibViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     @IBOutlet weak var lib: UITableView!
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var collections: [MusicCollection] = []
     private var musicService: MusicService?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            self.musicService = try MusicService()
-            self.collections = musicService?.loadLibrary() ?? []
-        } catch {
-            print(error)
-        }
+        musicService = appDelegate.musicService
+        self.collections = musicService?.loadLibrary() ?? []
+        
         
         lib.delegate = self
         lib.dataSource = self

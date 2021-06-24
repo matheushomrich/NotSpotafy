@@ -11,6 +11,8 @@ class AlbumViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var musicService: MusicService?
     var musicCollection: MusicCollection?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+   
     @IBOutlet weak var albumCover: UIImageView!
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var albumCreator: UILabel!
@@ -35,12 +37,16 @@ class AlbumViewController: UIViewController, UITableViewDataSource, UITableViewD
         if musicCollection?.type.rawValue == "playlist" {
             infoButton.isEnabled = false
         }
-        
+        musicService = appDelegate.musicService
         albumTable.dataSource = self
         albumTable.delegate = self
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        albumTable.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (musicCollection?.musics.count)!
     }
@@ -78,11 +84,22 @@ class AlbumViewController: UIViewController, UITableViewDataSource, UITableViewD
         performSegue(withIdentifier: "detailSegue", sender: musicCollection)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+        {
+            let music: Music = (musicCollection?.musics[indexPath.row])!
+            self.performSegue(withIdentifier: "playing-segue", sender: music)
+        }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detailSegue" {
             let mc = sender as? MusicCollection
             let vc = segue.destination as? AlbumDetailViewController
             vc!.musicCollection = mc
+        } else if segue.identifier == "playing-segue" {
+            let music = sender as? Music
+            let vc = segue.destination as? PlayingViewController
+            vc!.music = music
+            vc?.musicService = musicService
         }
     }
     

@@ -62,16 +62,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="yQB-vA-nJ4">
-                                                    <rect key="frame" x="78" y="13" width="287.5" height="36.5"/>
+                                                    <rect key="frame" x="78" y="13.5" width="287.5" height="35"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjb-SP-bUi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjb-SP-bUi">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Subtitle Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdP-RU-gUh">
-                                                            <rect key="frame" x="0.0" y="20.5" width="83.5" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdP-RU-gUh">
+                                                            <rect key="frame" x="0.0" y="20.5" width="78" height="14.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" systemColor="secondaryLabelColor"/>
                                                             <nil key="highlightedColor"/>
@@ -84,6 +84,9 @@
                                                     <state key="normal" image="heart.fill" catalog="system">
                                                         <attributedString key="attributedTitle"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="unfavorite:" destination="fcf-b1-Nmx" eventType="touchUpInside" id="C1b-1e-PgM"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -103,6 +106,7 @@
                                             <outlet property="favoriteImage" destination="KX0-LT-JJg" id="BpU-GS-gd7"/>
                                             <outlet property="favoriteLabel" destination="Zjb-SP-bUi" id="mBP-bO-cHY"/>
                                             <outlet property="favoriteSubtitleLabel" destination="wdP-RU-gUh" id="R1b-QZ-j12"/>
+                                            <outlet property="heartButton" destination="gTL-EN-6ZH" id="e5b-yE-4xd"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NLK-pn-unw">

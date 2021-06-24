@@ -7,20 +7,10 @@
 
 import UIKit
 
-class AlbumDetailViewController: UIViewController {
+class AlbumDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-//    @IBOutlet weak var topCell: DetailViewCell!
-//    @IBOutlet weak var bottomCell: DetailViewBottomCell!
     @IBOutlet weak var tableView: UITableView!
     var musicCollection: MusicCollection?
-//    @IBOutlet weak var albumCover: UIImageView!
-//    @IBOutlet weak var albumName: UILabel!
-//    @IBOutlet weak var albumArtist: UILabel!
-//    @IBOutlet weak var numberOfSongs: UILabel!
-//    @IBOutlet weak var releaseDate: UILabel!
-//    @IBOutlet weak var albumDescription: UILabel!
-//    @IBOutlet weak var aboutArtirst: UILabel!
-//    @IBOutlet weak var artistDescription: UILabel!
     
     @IBAction func closeAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -29,15 +19,39 @@ class AlbumDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        topCell.imageView!.image = UIImage(named: musicCollection!.id)
-//        topCell.albumName!.text = musicCollection?.title
-//        topCell.albumArtist!.text = musicCollection?.mainPerson
-//        topCell.numberOfSongs.text = "\(String(describing: musicCollection!.musics.count)) songs"
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MMM dd yyyy"
-//        topCell.releaseDate.text = "Released \(dateFormatter.string(from: musicCollection!.referenceDate))"
-//        topCell.albumDescription.text = musicCollection?.albumDescription
-//        bottomCell.aboutArtirst.text = musicCollection?.mainPerson
-//        bottomCell.artistDescription.text = musicCollection?.albumArtistDescription
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            //top cell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "top-cell", for: indexPath) as? DetailViewCell else { fatalError("Could not convert from cell to DetailViewCell") }
+            
+            cell.imageView!.image = UIImage(named: musicCollection!.id)
+            cell.albumName!.text = musicCollection?.title
+            cell.albumArtist!.text = musicCollection?.mainPerson
+            cell.numberOfSongs.text = "\(String(describing: musicCollection!.musics.count)) songs"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd yyyy"
+            cell.releaseDate.text = "Released \(dateFormatter.string(from: musicCollection!.referenceDate))"
+            cell.albumDescription.text = musicCollection?.albumDescription
+            
+            return cell
+            
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "bottom-cell", for: indexPath) as? DetailViewBottomCell else { fatalError("Could not convert from cell to DetailViewBottomCell") }
+            
+            cell.aboutArtirst.text = "About \(String(describing: musicCollection!.mainPerson))"
+            cell.artistDescription.text = musicCollection?.albumArtistDescription
+            
+            return cell
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
     }
 }
