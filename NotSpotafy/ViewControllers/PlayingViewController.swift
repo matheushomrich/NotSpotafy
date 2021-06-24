@@ -17,6 +17,7 @@ class PlayingViewController: UIViewController {
     
     var music: Music?
     var musicService: MusicService?
+    var albumTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +58,8 @@ class PlayingViewController: UIViewController {
         return false
     }
 
-    
-    
-    
-   
+    override func viewWillDisappear(_ animated: Bool) {
+        albumTable.reloadData()
+    }
 
-    
 }

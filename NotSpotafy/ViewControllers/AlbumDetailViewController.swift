@@ -29,7 +29,7 @@ class AlbumDetailViewController: UIViewController, UITableViewDataSource, UITabl
             //top cell
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "top-cell", for: indexPath) as? DetailViewCell else { fatalError("Could not convert from cell to DetailViewCell") }
             
-            cell.imageView!.image = UIImage(named: musicCollection!.id)
+            cell.albumCover.image = UIImage(named: musicCollection!.id)
             cell.albumName!.text = musicCollection?.title
             cell.albumArtist!.text = musicCollection?.mainPerson
             cell.numberOfSongs.text = "\(String(describing: musicCollection!.musics.count)) songs"

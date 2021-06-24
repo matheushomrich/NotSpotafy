@@ -100,6 +100,7 @@ class AlbumViewController: UIViewController, UITableViewDataSource, UITableViewD
             let vc = segue.destination as? PlayingViewController
             vc!.music = music
             vc?.musicService = musicService
+            vc!.albumTable = albumTable
         }
     }
     
