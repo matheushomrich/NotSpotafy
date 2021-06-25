@@ -38,6 +38,9 @@ class AlbumDetailViewController: UIViewController, UITableViewDataSource, UITabl
             cell.releaseDate.text = "Released \(dateFormatter.string(from: musicCollection!.referenceDate))"
             cell.albumDescription.text = musicCollection?.albumDescription
             
+            cell.stackView.setCustomSpacing(20, after: cell.albumName)
+            cell.stackView.setCustomSpacing(20, after: cell.releaseDate)
+            
             return cell
             
         } else {

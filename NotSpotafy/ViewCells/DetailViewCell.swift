@@ -16,5 +16,6 @@ class DetailViewCell: UITableViewCell {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var albumDescription: UILabel!
     
+    @IBOutlet weak var stackView: UIStackView!
     
 }
